@@ -25,7 +25,10 @@ pipeline{
                script{
                    withCredentials([kubeconfigFile(credentialsId: 'kubernetes-config', variable: 'KUBECONFIG')]) {
                         
-                          sh 'helm upgrade --install --set image.repository="34.125.214.226:8083/springapp" --set image.tag="${VERSION}" myjavaapp myapp/ ' 
+                          sh '''
+                          sed -i 's,IMAGENAME,deekshithsn/userui:${VERSION},g' userui.yaml
+                          kubectl apply -f userui.yaml
+                          ''' 
                         
                     }
                }
