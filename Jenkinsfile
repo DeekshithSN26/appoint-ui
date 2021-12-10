@@ -11,7 +11,7 @@ pipeline{
                     withCredentials([string(credentialsId: 'docker_pass', variable: 'docker_password')]) {
                              sh '''
                                 docker build -t deekshithsn/userui:${VERSION} .
-                                docker login -u admin -p $docker_password
+                                docker login -u deekshithsn -p $docker_password
                                 docker push  deekshithsn/userui:${VERSION}
                                 docker rmi deekshithsn/userui:${VERSION}
                             '''
