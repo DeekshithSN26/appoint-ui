@@ -31,7 +31,7 @@
       spec:
         containers:
           - name: "user-ui"
-            image: "deekshithsn/userui:1.0"
+            image: "IMAGENAME"
             imagePullPolicy: "IfNotPresent"
             ports:
               - containerPort: 3000
