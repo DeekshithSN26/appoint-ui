@@ -26,7 +26,7 @@ pipeline{
                    withCredentials([kubeconfigFile(credentialsId: 'kubernetes-config', variable: 'KUBECONFIG')]) {
                         
                           sh '''
-                          sed -i 's,IMAGENAME,deekshithsn/userui:${VERSION},g' userui.yaml
+                          sed -i "s,IMAGENAME,deekshithsn/userui:${VERSION},g" userui.yaml
                           kubectl apply -f userui.yaml
                           ''' 
                         
