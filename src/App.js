@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-           Book an <code> Appointment </code> with DeekshithSN!! 
+           Book an <code> Appointment </code> with Me!! 
         </p>
         <BookForm />
       </header>
